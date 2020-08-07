@@ -1,20 +1,218 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
 :root {
-    --color-button: #000;
+    --z-index-0: -10;
+    --z-index-1: 10;
+    --z-index-2: 100;
+    --z-index-3: 1000;
+
 
 }
 
+* {
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Roboto', sans-serif;
+}
 
-.container-form-grid {
+p {
+    color: #697477;
+}
+
+main {
+    max-width: 700px;
+    width: 98%;
+    margin: auto;
+    padding: 48px;
+}
+
+.form {
     display: grid;
-    grid-gap: 20px;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: 'name     name'
-                         'email     email';
-                         width: 500px;
+    gap: 15px;
+    width: 550px;
+
+
+}
+
+::placeholder {
+    color: #BABBCF;
+}
+
+.form-grup-input {
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #f2f2f2;
+    border-radius: 3px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 40px 0 10px;
+    transition: .2s ease all;
+}
+
+.form-input:focus {
+    border: 1px solid #0075FF;
+    outline: none;
+    box-shadow: 3px 0px 8px rgba(163, 163, 163, 0.4);
+}
+
+.error-message {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.error-message-active {
+    display: block;
+}
+
+.validate-status-form {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: var(--z-index-2);
+    font-size: 16px;
+    opacity: 0;
+}
+
+.chebox-cursor,
+.form-chebox {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.form--grup-terminos {
+    color: #2A3B47;
+}
+
+.form-email,
+.form--grup-terminos,
+.message-form,
+.button-form-enviar {
+    grid-column: span 2;
+
+}
+
+.message-form {
+    height: 35px;
+    line-height: 35px;
+    background-color: #f75d5d;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}f
+
+.message-form-active {
+    display: block;
+}
+
+.message-form p {
+    margin: 0;
+}
+
+.form-chebox {
+    border: red;
+}
+
+.button-form-enviar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-form-enviar p {
+    padding: 5px;
+    margin: 0;
+
+}
+
+.button-form {
+    height: 38px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background: rgb(42, 121, 240);
+    line-height: 38px;
+    cursor: pointer;
+    color: #e5e9f3;
+    transition: .1s ease all;
 }
 
 
-.grid-form{
-    grid-area: name;
+.button-form:hover {
+    box-shadow: 3px 0px 25px rgba(163, 163, 163, 0.4);
 }
+
+.link-login {
+    display: flex;
+    justify-content: center;
+
+
+
+}
+
+.link-login a {
+    text-decoration: none;
+    color: #0075FF;
+    margin-left: 2px;
+
+}
+.link-login a:hover{
+    text-decoration: underline;
+}
+
+.form-message-exit {
+    font-size: 16px;
+    color: #2fec58;
+    display: none;
+}
+
+.form-message-exit-active {
+    display: block;
+}
+
+/* Estilos para validaciones */
+.form-grupo-correct
+.validate-status-form {
+    top: 8px;
+    font-size: 20px;
+    color: #2fec58;
+    opacity: 1;
+}
+.form-grupo-incorrect .validate-status-form{
+    color: #bb2929;
+    opacity: 1; 
+} 
+.form-grupo-incorrect .form-input{
+    border:1px solid #bb2929;
+    opacity: 1; 
+    
+} 
+
+
+/* Mediasqueries */
+@media screen and (max-width:800px){
+    main{
+        max-width: 600px;
+    }
+      .form{
+          grid-template-columns: 1fr;
+     width: 500px;
+        }
+      .form-email,
+      .form--grup-terminos,
+      .message-form,
+      .button-form-enviar {
+          grid-column: 1;
+      
+      }
+    }
+
+    
+               

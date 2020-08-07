@@ -5,37 +5,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Normalize.css">
+    <link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
-    <title>Formulario</title>
+    <title>Form-with-Grid</title>
 </head>
 
 <body>
     <main>
-        <section class="container-form-grid">
-            <form class="grid-form">
-                <div class="name-user">
-                    <input type="text" name="username" placeholder="Nombre" required>
+       
+            <form class="form" id="form">
+                <div class="form--grup" id="grup-username">
+                    <div class="form-grup-input ">
+                        <input class="form-input" type="text" name="username" placeholder="Nombre" id="username">
+                        <i class='validate-status-form bx bxs-x-circle'></i>
+                    </div>
+                    <p class="error-message">Necesita ingresar su nombre en este campo</p>
                 </div>
-                <div class="lastName-user">
-                    <input type="text" name="lastName" placeholder="Apellidos">
+                <div class="form--grup" id="grup-lastname">
+                    <div class="form-grup-input">
+                        <input class="form-input" type="text" name="lastname" placeholder="Apellidos" id="lastname">
+                        <i class='validate-status-form bx bxs-x-circle'></i>
+                    </div>
+                    <p class="error-message">Necesitas ingresar tus apellidos en este campo</p>
                 </div>
-                <div class="email-user">
-                    <input type="email" name="email" id="" placeholder="Correo Electrónico" required>
+                <div class="form--grup  form-email" id="grup-email">
+                    <div class="form-grup-input">
+                        <input class="form-input" type="email" name="email"  placeholder="Correo Electrónico" id="email" >
+                        <i class='validate-status-form bx bxs-x-circle'></i>
+                    </div>
+                    <p class="error-message">Necesitas ingresar tu correo en este campo</p>
                 </div>
-                <div class="password-user">
-                    <input type="password" name="" id="" placeholder="Contraseña">
+                <div class="form--grup" id="grup-password">
+                    <div class="form-grup-input">
+                        <input class="form-input" type="password" name=password  placeholder="Contraseña" id="password">
+                        <i class='validate-status-form bx bxs-x-circle'></i>
+                    </div>
+                    <p class="error-message">La contraseña tiene que ser entre 4 y 20 digitos</p>
                 </div>
-                <div class="Repeat-password-user">
-                    <input type="password" name="" id="" placeholder="Repetir contraseña">
+                <div class="form--grup" id="grup-repeat-password">
+                    <div class="form-grup-input" >
+                        <input class="form-input" type="password" name="repeat-password"  placeholder="Repetir contraseña" id="repeat-password">
+                        <i class='validate-status-form bx bxs-x-circle'></i>
+                    </div>
+                    <p class="error-message">Su contraseñas no coinciden</p>
                 </div>
-                <div class="button-form"><input type="submit" class="button small full" value="Registrarse"></div>
+                
+                <div class="form--grup-terminos" id="terminos-condiciones">
+                    <label class="chebox-cursor">
+                        <input class="form-chebox" type="checkbox" name="terminos" id="terminos">
+                        Acepto los Ternminos y Condiciones
+                    </label>
+                </div>
+
+                <div class="message-form" id="message-form">
+                    <p><i class='bx bxs-error'></i><b>Error:</b>Debe llenar el formulario correctamente</p>
+                </div>
+
+                <div class="form--grup button-form-enviar">
+                    <button type="submit" class="button-form" >Registrarse</button>
+                        <p class="form-message-exit" id="form-message-exit">Registro exitoso</p>
+                    </div>
+
             </form>
             <p class="link-login">¿Ya tienes cuenta?<a href="#">Iniciar sesión</a></p>
 
-        </section>
-
     </main>
-
+    <script src="js/form.js"></script>
 </body>
 
 </html>
